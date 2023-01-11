@@ -65,7 +65,6 @@ export const assignEnquiry=async (req,res)=>{
     }
 }
 
-// get all private enquiries
 export const getPrivateEnquiries=async (req,res)=>{
     const userId=req.userId;
     try{

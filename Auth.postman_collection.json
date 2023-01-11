@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "40806641-700c-4332-b527-311cf0c90683",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16798660"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"bhaumik.tandan@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"bhaumik.tandan@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-zMWdXPO9lLU33kH8uH5S/vn5e6g\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:30:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": \"success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY1NDIwLCJleHAiOjE2NzM0NjkwMjB9.F-r-7TIhwz0_ci-MWO9ehTYiurvsIuau3BeRqWULJ9I\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"bhaumik.tandan@gmail.com\",\r\n    \"password\":\"abcd\",\r\n    \"firstName\":\"Bhaumik\", \r\n    \"lastName\":\"Tandan\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign Up",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"bhaumik.tandan@gmail.com\",\r\n    \"password\":\"abcd\",\r\n    \"firstName\":\"Bhaumik\", \r\n    \"lastName\":\"Tandan\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "492"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ec-rufv8aITNvFX/PzTxJp94K76FmI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:22:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"_id\": \"63bf0c7167e55868d0cbad46\",\n        \"email\": \"bhaumik.tandan@gmail.com\",\n        \"password\": \"$2a$12$MqrX7Gm0PpjoHJh9PkRbf.k3sYCe1J7RKE.fONbxMut0RMWwKaytW\",\n        \"name\": \"Bhaumik Tandan\",\n        \"createdAt\": \"2023-01-11T19:22:25.414Z\",\n        \"updatedAt\": \"2023-01-11T19:22:25.414Z\",\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY0OTQ1LCJleHAiOjE2NzM0Njg1NDV9.6Jfrqkf6K54-69HfeZ67wxuB8epNdj6QDlN5W6K7TlM\"\n}"
+				}
+			]
+		}
+	]
+}

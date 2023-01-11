@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.post("/", addEnquiry);
 router.get("/", auth, getAllEnquiries);
+router.get("/private", auth, getPrivateEnquiries);
 router.get("/:id", auth, getEnquiryById);
 router.patch("/:id", auth, assignEnquiry);
-router.get("/private", auth, getPrivateEnquiries);
 
 export default router;

@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "b7cab097-cdd9-4dc9-82b3-513b948e0fcb",
+		"name": "Enquiry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16798660"
+	},
+	"item": [
+		{
+			"name": "Enquiry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Bhaumik\",\r\n    \"email\":\"abcd@gmail.com\",\r\n    \"courseInterest\":\"DSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/enquiry",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"enquiry"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Enquiry",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bhaumik\",\r\n    \"email\":\"abcd@gmail.com\",\r\n    \"courseInterest\":\"DSA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/enquiry",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-AooC3F8CZK+WCS25er/1B1yjraI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:27:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"63bf0da8dc4f4364a4b72108\",\n    \"name\": \"Bhaumik\",\n    \"email\": \"abcd@gmail.com\",\n    \"courseInterest\": \"DSA\",\n    \"createdAt\": \"2023-01-11T19:27:36.685Z\",\n    \"updatedAt\": \"2023-01-11T19:27:36.685Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "All Enquiry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY0OTQ1LCJleHAiOjE2NzM0Njg1NDV9.6Jfrqkf6K54-69HfeZ67wxuB8epNdj6QDlN5W6K7TlM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/enquiry",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"enquiry"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Enquiry",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enquiry",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:29:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "All Enquiry",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enquiry",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bb-0BbkTJlinv7+6oxOj+oBAVmjbWE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:30:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"63bf0da8dc4f4364a4b72108\",\n        \"name\": \"Bhaumik\",\n        \"email\": \"abcd@gmail.com\",\n        \"courseInterest\": \"DSA\",\n        \"createdAt\": \"2023-01-11T19:27:36.685Z\",\n        \"updatedAt\": \"2023-01-11T19:27:36.685Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "ById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY0OTQ1LCJleHAiOjE2NzM0Njg1NDV9.6Jfrqkf6K54-69HfeZ67wxuB8epNdj6QDlN5W6K7TlM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/enquiry/63bf0da8dc4f4364a4b72108",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"enquiry",
+						"63bf0da8dc4f4364a4b72108"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enquiry/63bf0da8dc4f4364a4b72108",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry",
+								"63bf0da8dc4f4364a4b72108"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-AooC3F8CZK+WCS25er/1B1yjraI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:32:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"63bf0da8dc4f4364a4b72108\",\n    \"name\": \"Bhaumik\",\n    \"email\": \"abcd@gmail.com\",\n    \"courseInterest\": \"DSA\",\n    \"createdAt\": \"2023-01-11T19:27:36.685Z\",\n    \"updatedAt\": \"2023-01-11T19:27:36.685Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Assign",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY0OTQ1LCJleHAiOjE2NzM0Njg1NDV9.6Jfrqkf6K54-69HfeZ67wxuB8epNdj6QDlN5W6K7TlM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/enquiry/63bf0da8dc4f4364a4b72108",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"enquiry",
+						"63bf0da8dc4f4364a4b72108"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Assign",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enquiry/63bf0da8dc4f4364a4b72108",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry",
+								"63bf0da8dc4f4364a4b72108"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e0-bL/A6ln5XqjTEyi8LoLx3lVsW1o\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:33:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"63bf0da8dc4f4364a4b72108\",\n    \"name\": \"Bhaumik\",\n    \"email\": \"abcd@gmail.com\",\n    \"courseInterest\": \"DSA\",\n    \"createdAt\": \"2023-01-11T19:27:36.685Z\",\n    \"updatedAt\": \"2023-01-11T19:33:26.395Z\",\n    \"__v\": 0,\n    \"counselor\": \"63bf0c7167e55868d0cbad46\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Private",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJoYXVtaWsudGFuZGFuQGdtYWlsLmNvbSIsImlkIjoiNjNiZjBjNzE2N2U1NTg2OGQwY2JhZDQ2IiwiaWF0IjoxNjczNDY0OTQ1LCJleHAiOjE2NzM0Njg1NDV9.6Jfrqkf6K54-69HfeZ67wxuB8epNdj6QDlN5W6K7TlM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/enquiry/private",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"enquiry",
+						"private"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Private",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enquiry/private",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enquiry",
+								"private"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e2-xRUSgwwT5fYn8igwDLQJ5A6vTNk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 19:37:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"63bf0da8dc4f4364a4b72108\",\n        \"name\": \"Bhaumik\",\n        \"email\": \"abcd@gmail.com\",\n        \"courseInterest\": \"DSA\",\n        \"createdAt\": \"2023-01-11T19:27:36.685Z\",\n        \"updatedAt\": \"2023-01-11T19:37:42.386Z\",\n        \"__v\": 0,\n        \"counselor\": \"63bf0c7167e55868d0cbad46\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
