@@ -1,5 +1,5 @@
-import Counselor from "../models/counselor";
-import Enquiry from "../models/enquiry";
+import Enquiry from '../models/enquiry.js';
+import Counselor from '../models/counselor.js';
 
 export const addEnquiry=async (req,res)=>{
     const {name,email,phone,message}=req.body;

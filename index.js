@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
+import enquiryRoutes from "./routes/enquiry.js";
 const app = express();
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(cors());
 
 
 app.use("/auth", authRoutes);
+app.use("/enquiry", enquiryRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server running....");
