@@ -2,10 +2,10 @@ import Enquiry from '../models/enquiry.js';
 import Counselor from '../models/counselor.js';
 
 export const addEnquiry=async (req,res)=>{
-    const {name,email,phone,message}=req.body;
+    const {name,email,courseInterest}=req.body;
     try{
         const newEnquiry=new Enquiry({
-            name,email,phone,message
+            name,email,courseInterest
         });
         const savedEnquiry=await newEnquiry.save();
         res.status(201).json(savedEnquiry);
