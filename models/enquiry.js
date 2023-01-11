@@ -15,7 +15,6 @@ const enquirySchema = mongoose.Schema({
   },
   counselor: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
     ref: "Counselor",
   },
 },

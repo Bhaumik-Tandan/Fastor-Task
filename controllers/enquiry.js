@@ -1,69 +1,77 @@
-import Product from "../models/product.js";
-import User from "../models/counselor.js";
+import Counselor from "../models/counselor";
+import Enquiry from "../models/enquiry";
 
-export const getProducts = async (req, res) => {
-  const { page } = req.query;
-  console.log(page);
-  try {
-    const LIMIT = 16;
-    // Get the starting index of every page
-    const startIndex = (Number(page) - 1) * LIMIT;
-    const total = await Product.countDocuments({});
-
-    const posts = await Product.find()
-      .sort({ _id: -1 })
-      .limit(LIMIT)
-      .skip(startIndex);
-
-    res.status(200).json({
-      data: posts,
-      currentPage: Number(page),
-      numberOfPages: Math.ceil(total / LIMIT),
-    });
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-
-};
-
-
-export const getProductsbyId = async (req, res) => {
-  console.log(req.params)
-  const { id } = req.params;
-
-  try {
-    const product = await Product.findById(id);
-    console.log(product);
-    res.status(200).json(product);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
+export const addEnquiry=async (req,res)=>{
+    const {name,email,phone,message}=req.body;
+    try{
+        const newEnquiry=new Enquiry({
+            name,email,phone,message
+        });
+        const savedEnquiry=await newEnquiry.save();
+        res.status(201).json(savedEnquiry);
+    }catch(error){
+        res.status(409).json({message:error.message});
+    }
 }
 
-
-export const saveCart = async (req, res) => {
-  const { cart } = req.body;
- // console.log(cart);
-    try {
-        const user = await User.findByIdAndUpdate(
-        req.userId,
-        { cart }
-        );
-        res.status(201).json(
-          {
-          success: true,
-			    result: "success"});
-    } catch (error) {
-        res.status(404).json({ message: error.message });
+export const getAllEnquiries=async (req,res)=>{
+    const userId=req.userId;
+    try{
+        const allEnquiries=await Enquiry.find({$or:[{counselor:userId},{counselor:null}]});
+        res.status(200).json(allEnquiries);
+    }catch(error){
+        res.status(404).json({message:error.message});
     }
-};
+}
 
-export const getOrders = async (req, res) => {
-  try {
-    res.status(200,"success");
-  }
-  catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
+export const getEnquiryById=async (req,res)=>{
+    const {id:_id}=req.params;
+    try{
+        const enquiry=await Enquiry
+        .findById
+        (_id);
+        if(enquiry.counselor){
+            if(enquiry.counselor.toString()!==req.userId){
+                return res.status(401).json({message:"Unauthorized"});
+            }
+        }
+        res.status(200).json(enquiry);
+    }catch(error){
+        res.status(404).json({message:error.message});
+    }
+}
 
+export const assignEnquiry=async (req,res)=>{
+    const {id:_id}=req.params;
+    const userId=req.userId;
+    try{
+        const enquiry=await Enquiry
+        .findById
+        (_id);
+        if(enquiry.counselor){
+            if(enquiry.counselor.toString()!==req.userId){
+                return res.status(401).json({message:"Unauthorized"});
+            }
+        }
+        const counselor=await Counselor.findById(userId);
+        if(!counselor){
+            return res.status(404).json({message:"Counselor not found"});
+        }
+        const updatedEnquiry=await Enquiry.findByIdAndUpdate
+        (_id,{counselor:userId},{new:true});
+        res.status(200).json(updatedEnquiry);
+    }catch(error){
+        res.status(404).json({message:error.message});
+    }
+}
+
+// get all private enquiries
+export const getPrivateEnquiries=async (req,res)=>{
+    const userId=req.userId;
+    try{
+        const allEnquiries=await Enquiry.find({counselor:userId});
+        res.status(200).json(allEnquiries);
+    }catch(error){
+        res.status(404).json({message:error.message});
+    }
+}
